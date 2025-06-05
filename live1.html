@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live location</h1>
+    <div id="map"></div>
+    <script>
+        // Initialize Map
+        const map = L.map('map').setView([24.8714, 84.0864], 13); 
+        
+        // Add OpenStreetMap Tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        // Add Marker
+        const marker = L.marker([24.8714, 84.0864]).addTo(map)
+            .bindPopup('manish  house')
+            .openPopup();
+    </script>
+</body>
+</html>

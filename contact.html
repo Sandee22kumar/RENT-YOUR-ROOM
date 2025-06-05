@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Hari Om" />
+    <meta name="description" content="HOUSE RENTAL SYSTEM" />
+    <meta name="keywords" content="Give Your Keywords for SEO" />
+    <title>RENT YOUR ROOM</title>
+    <!-- Adding CSS here -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: white;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .menu {
+            background-color:white;
+            overflow: hidden;
+        }
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .menu ul li {
+            display: inline-block;
+        }
+        .menu ul li a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+        }
+        .menu ul li a:hover {
+            background-color: #575757;
+        }
+        .main {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h3 {
+            color: #333;
+        }
+        .booking-details {
+            padding: 20px;
+        }
+        .booking-details div {
+            margin-bottom: 15px;
+        }
+        .booking-details label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .booking-details input[type="text"],
+        .booking-details input[type="password"],
+        .booking-details select,
+        .booking-details textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .booking-details input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .booking-details input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Starts HERE -->
+    <header class="header">
+        <div class="wrapper">
+            <h1>RENT YOUR ROOM</h1>
+        </div>
+    </header>
+    <!-- Header Ends HERE -->
+    
+    <!-- Menu Starts HERE -->
+    <nav class="menu">
+        <div class="wrapper">
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="about.html"><li>About Us</li></a>
+                <a href="#"><li>Houses</li></a>
+                <a href="contact.html"><li></li></a>
+                <a href="login.html"><li></li></a>
+            </ul>
+        </div>
+    </nav>
+    <!-- Menu Ends HERE -->
+    
+    <!-- Main Body Starts HERE -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- Contact Detail Entry -->
+            <div class="booking-details">
+                <h3>Registration</h3>
+                <form action="http://localhost:5501/submit" method="post"  onsubmit="return validation()">
+                    <fieldset>
+                        <legend>User ID</legend>
+                        <input type="text" id="userid" name="userid" placeholder="User ID" >
+                        <br> <span id="useid"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>First Name</legend>
+                        <input type="text" id="fnme" name="fname" placeholder="First Name" >
+                        <br> <span id="fnamee"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Last Name</legend>
+                        <input type="text" id="lnme" name="lname" placeholder="Last Name">
+                        <br> <span id="lnamee"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Email</legend>
+                        <input type="text" id="eml" name="eml" placeholder="Email" >
+                        <br> <span id="emll"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Password</legend>
+                        <input type="password" id="Pass" name="pass" placeholder="Password" >
+                        <br> <span id="Passs"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Mobile Number</legend>
+                        <input type="text" id="mbl" name="mbl" placeholder="Mobile (10 digits)" >
+                        <br> <span id="mbll"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <select name="gender" id="gender1">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                        <br> <span id="gendere"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>State</legend>
+                        <select name="state" id="state1">
+                            <option value="">Select State</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="P">Punjab</option>
+                            <option value="M">Maharashtra</option>
+                            <option value="CH">Chhattisgarh</option>
+                            <option value="MI">Mizoram</option>
+                            <option value="AN">Andhra Pradesh</option>
+                            <option value="KA">Karnataka</option>
+                            <option value="WE">West Bengal</option>
+                            <option value="GO">Goa</option>
+                            <option value="TR">Tripura</option>
+                            <option value="AR">Arunachal Pradesh</option>
+                            <option value="AS">Assam</option>
+                            <option value="MA">Manipur</option>
+                            <option value="GU">Gujarat</option>
+                            <option value="HI">Himachal Pradesh</option>
+                            <option value="HA">Haryana</option>
+                            <option value="O">Odisha</option>
+                            <option value="NA">Nagaland</option>
+                            <option value="MA">Madhya Pradesh</option>
+                            <option value="TA">Tamil Nadu</option>
+                            <option value="ME">Meghalaya</option>
+                            <option value="TE">Telangana</option>
+                            <option value="KE">Kerala</option>
+                            <option value="JH">Jharkhand</option>
+                            <option value="UT">Uttar Pradesh</option>
+                            <option value="SI">Sikkim</option>
+                            <option value="UT">Uttarakhand</option>
+                            <option value="DE">Delhi</option>
+                            <option value="JA">Jammu & Kashmir</option>
+                        </select>
+                        <br> <span id="statee"></span>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Address</legend>
+                        <textarea name="address" cols="30" id="add1" rows="3"></textarea>
+                        <br> <span id="addresse"></span>
+                    </fieldset>
+    
+                    <input type="submit" id="btn"  value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Main Body Ends HERE -->
+
+    <!-- Footer Starts HERE -->
+    <footer class="footer">
+        <div class="wrapper">
+            <p>&copy; <a href="#">RENT YOUR ROOM</a>. All rights reserved 2024.</p>
+        </div>
+    </footer>
+    <!-- Footer Ends HERE -->
+
+    <script>
+        function validation() {
+            var fnme = document.getElementById('fnme').value.trim();
+            var lnme = document.getElementById('lnme').value.trim();
+            var eml = document.getElementById('eml').value.trim();
+            var Pass = document.getElementById('Pass').value.trim();
+            var mbl = document.getElementById('mbl').value.trim();
+            var gen = document.getElementById('gender1').value;
+            var state = document.getElementById('state1').value;
+            var add1 = document.getElementById('add1').value.trim();
+            var isValid = true;
+
+            // Reset error messages
+            document.getElementById('fnamee').innerHTML = "";
+            document.getElementById('lnamee').innerHTML = "";
+            document.getElementById('emll').innerHTML = "";
+            document.getElementById('Passs').innerHTML = "";
+            document.getElementById('mbll').innerHTML = "";
+            document.getElementById('gendere').innerHTML = "";
+            document.getElementById('statee').innerHTML = "";
+            document.getElementById('addresse').innerHTML = "";
+
+            if (fnme === "") {
+                document.getElementById('fnamee').innerHTML = "Please write First name";
+                isValid = false;
+            } else if (fnme.length < 3) {
+                document.getElementById('fnamee').innerHTML = "Please write more than two characters for First name";
+                isValid = false;
+            } else if (!isNaN(fnme)) {
+                document.getElementById('fnamee').innerHTML = "Numbers are not allowed";
+                isValid = false;
+            }
+
+            if (lnme === "") {
+                document.getElementById('lnamee').innerHTML = "Please write Last name";
+                isValid = false;
+            } else if (lnme.length < 3) {
+                document.getElementById('lnamee').innerHTML = "Please write more than two characters for Last name";
+                isValid = false;
+            } else if (!isNaN(lnme)) {
+                document.getElementById('lnamee').innerHTML = "Numbers are not allowed";
+                isValid = false;
+            }
+
+            if (eml === "") {
+                document.getElementById('emll').innerHTML = "Please write Email";
+                isValid = false;
+            } else if (eml.indexOf('@') <= 0 || (eml.charAt(eml.length - 4) != '.' && eml.charAt(eml.length - 3) != '.')) {
+                document.getElementById('emll').innerHTML = "*Invalid position of @ or . *";
+                isValid = false;
+            }
+
+            if (Pass === "") {
+                document.getElementById('Passs').innerHTML = "Please write Password";
+                isValid = false;
+            } else if (Pass.length < 8) {
+                document.getElementById('Passs').innerHTML = "Please write Password at least eight characters";
+                isValid = false;
+            } else if (Pass.search(/[0-9]/) == -1 || Pass.search(/[a-z]/) == -1 || Pass.search(/[A-Z]/) == -1 || Pass.search(/[!\@\#\$\%\*\&]/) == -1) {
+                document.getElementById('Passs').innerHTML = "Password must include uppercase, lowercase, number, and special character";
+                isValid = false;
+            }
+
+            if (mbl === "") {
+                document.getElementById('mbll').innerHTML = "Please write Mobile Number";
+                isValid = false;
+            } else if (isNaN(mbl) || mbl.length != 10) {
+                document.getElementById('mbll').innerHTML = "Invalid Mobile Number";
+                isValid = false;
+            }
+
+            if (!gen) {
+                document.getElementById('gendere').innerHTML = "Please choose gender";
+                isValid = false;
+            }
+
+            if (!state) {
+                document.getElementById('statee').innerHTML = "Please choose state";
+                isValid = false;
+            }
+
+            if (!add1) {
+                document.getElementById('addresse').innerHTML = "Please fill in the address";
+                isValid = false;
+            }
+
+            return isValid; // Make sure to return the result of the validation
+        }
+    </script>
+</body>
+</html>
